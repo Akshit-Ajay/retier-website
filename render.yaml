@@ -1,0 +1,10 @@
+# Render Blueprint: importing the repo creates the service with these settings.
+# Free plan: the disk is wiped on redeploy, so local photos/DB are NOT kept (fixed in M1).
+services:
+  - type: web
+    name: retier
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
